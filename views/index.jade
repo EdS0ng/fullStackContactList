@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+  head
+    title Home
+    link(href="css/bootstrap.min.css" rel="stylesheet")
+    link(href="css/style.css" rel="stylesheet")
+  body
+    .container
+      br
+      .jumbotron
+        h1 Contact List
+      a.btn.btn-default(href="/add") Add Contact
+      table.table 
+        tbody
+          tr
+            th Name
+            th Number
+            th Email
+            th Edit
+            th Remove
+          each element in contacts
+            tr(id="#{element._id}" class="#{element.name}")
+              td= element.name
+              td= element.phone
+              td= element.email
+              td
+                form#edit(action="/edit" method="post")
+                  input(type="text" name="target" value="#{element._id}" style="display:none")
+                  button.btn.btn-default.edit
+                    span.glyphicon.glyphicon-edit
+              td
+                button.btn.btn-default.remove
+                  span.glyphicon.glyphicon-remove  
+    script(src='js/jquery.min.js')
+    script(src='js/main.js')

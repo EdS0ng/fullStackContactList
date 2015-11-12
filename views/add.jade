@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+  head
+    title Home
+    link(href="css/bootstrap.min.css" rel="stylesheet")
+    link(href="css/style.css" rel="stylesheet")
+  body
+    .container
+      br
+      .jumbotron
+        h1 Add Contact
+      form(action="/add/addContact" method="post")
+        input(placeholder="Name" type="text" name="contactName")
+        input(placeholder="Number" type="tel" name="telephone")
+        input(placeholder="Email" type="email" name="email")
+        input(type="submit")        
+    script(src='js/jquery.min.js')

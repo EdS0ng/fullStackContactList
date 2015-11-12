@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+  head
+    title Home
+    link(href="css/bootstrap.min.css" rel="stylesheet")
+    link(href="css/style.css" rel="stylesheet")
+  body
+    .container
+      br
+      .jumbotron
+        h1 Edit Contact
+      form(action="/edit" method="post")
+        input(type="text" name="id" style="display:none;" value="#{id}")
+        input(type="text" name="contactName" value="#{name}")
+        input(type="tel" name="telephone" value="#{phone}")
+        input(type="email" name="email" value="#{email}")
+        input(type="submit")        
